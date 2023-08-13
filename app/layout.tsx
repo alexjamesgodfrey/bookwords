@@ -1,4 +1,4 @@
-import { Head } from "next/document"
+import Script from "next/script"
 import "./globals.css"
 
 export const metadata = {
@@ -13,23 +13,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-P3ZT0WM0PN`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-P3ZT0WM0PN');
-              `,
-          }}
-        />
-      </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=P3ZT0WM0PN" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'P3ZT0WM0PN');
+        `}
+      </Script>
       <body>
         <main className="min-h-screen bg-background flex flex-col items-center">
           {children}
