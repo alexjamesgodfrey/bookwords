@@ -1,3 +1,4 @@
+import Butterfly from "@/components/Butterfly"
 import Header from "@/components/Header"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
@@ -48,22 +49,31 @@ export default async function Index() {
     <div className="w-full flex flex-col items-center">
       <Header user={user} />
 
-      <div className="animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground">
-        <div className="flex flex-col items-center mb-4 lg:mb-12">
-          <div className="flex gap-8 justify-center items-center">
-            <Link href="https://supabase.com/" target="_blank">
-              <SupabaseLogo />
-            </Link>
-            <span className="border-l rotate-45 h-6" />
-            <NextJsLogo />
+      <div className="flex">
+        <div className="w-1/2">{/* text and buttons will go here*/}</div>
+      </div>
+
+      <div className="animate-in flex flex-col gap-14 opacity-0 px-3 py-16 lg:py-24 text-foreground">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center mb-4 lg:mb-12">
+            <div className="flex gap-8 justify-center items-center">
+              <Link href="https://supabase.com/" target="_blank">
+                <SupabaseLogo />
+              </Link>
+              <span className="border-l rotate-45 h-6" />
+              <NextJsLogo />
+            </div>
+            <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
+            <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12">
+              The fastest way to start building apps with{" "}
+              <strong>Supabase</strong> and <strong>Next.js</strong>
+            </p>
+            <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
+              Get started by editing <strong>app/page.tsx</strong>
+            </div>
           </div>
-          <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-          <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12">
-            The fastest way to start building apps with{" "}
-            <strong>Supabase</strong> and <strong>Next.js</strong>
-          </p>
-          <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
-            Get started by editing <strong>app/page.tsx</strong>
+          <div>
+            <Butterfly />
           </div>
         </div>
 
