@@ -15,7 +15,7 @@ export default class Butterfly {
       },
       timeTransform: {
         type: "f",
-        value: 0,
+        value: 1,
       },
       interval: {
         type: "f",
@@ -35,7 +35,7 @@ export default class Butterfly {
       },
       colorH: {
         type: "f",
-        value: 0,
+        value: 0.38,
       },
     }
     this.obj
@@ -82,6 +82,9 @@ export default class Butterfly {
   }
   render(renderer, time) {
     this.uniforms.time.value += time
+
+    this.uniforms.colorH.value = (this.uniforms.colorH.value + 0.005) % 1
+
     if (
       this.uniforms.timeTransform.value < this.interval &&
       this.isTransform === true

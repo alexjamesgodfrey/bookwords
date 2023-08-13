@@ -117,7 +117,9 @@ export default function Header({ user }: Props) {
             <Link href="#" aria-label="Home">
               <div className="flex items-center">
                 <Image src={logo} alt="Bookwords" width={32} height={32} />
-                <p className="ml-4 font-semibold">Bookwords.org</p>
+                <p className="ml-4 font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                  bookwords.org
+                </p>
               </div>
             </Link>
           </div>

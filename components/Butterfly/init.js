@@ -64,7 +64,7 @@ export default function () {
   )
 
   const texArray = ["/images/tex.png"]
-  const textures = []
+  const textures = ["/images/tex.png"]
 
   //
   // common process
