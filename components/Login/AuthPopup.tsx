@@ -50,12 +50,12 @@ export default function AuthPopup({ show, setShow }: Props) {
                     as="h3"
                     className="text-center text-lg font-medium leading-6 text-gray-900"
                   >
-                    Become a Bookwords contributor
+                    become a bookwords contributor
                   </Dialog.Title>
                   <div className="my-2">
                     <p className="text-sm text-gray-500 text-center">
-                      Login to access our API and contribute your ebooks for
-                      Bookwords analysis.
+                      login to access our api and contribute your ebooks for
+                      bookwords analysis.
                     </p>
                   </div>
                   <div className="mx-auto w-64 pt-1">
@@ -71,7 +71,7 @@ export default function AuthPopup({ show, setShow }: Props) {
                     className="cursor-pointer text-center text-sm text-gray-500 underline"
                     onClick={() => setShow(false)}
                   >
-                    No thanks
+                    no thanks
                   </p>
                 </Dialog.Panel>
               </Transition.Child>

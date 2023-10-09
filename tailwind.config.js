@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    animation: {
+      "spin-fast": "spin 0.3s linear infinite",
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",

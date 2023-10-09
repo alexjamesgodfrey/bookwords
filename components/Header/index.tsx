@@ -117,7 +117,7 @@ export default function Header({ user }: Props) {
             <Link href="#" aria-label="Home">
               <div className="flex items-center">
                 <Image src={logo} alt="Bookwords" width={32} height={32} />
-                <p className="ml-4 font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                <p className="hidden sm:flex ml-4 font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   bookwords.org
                 </p>
               </div>
@@ -127,10 +127,10 @@ export default function Header({ user }: Props) {
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <nav className="hidden md:block">
               <ul role="list" className="flex items-center gap-2 lg:gap-4">
-                <TopLevelNavItem href="#">About</TopLevelNavItem>
-                <TopLevelNavItem href="#">Charts</TopLevelNavItem>
-                <TopLevelNavItem href="/">Contribute</TopLevelNavItem>
-                <TopLevelNavItem href="#">API Docs</TopLevelNavItem>
+                <TopLevelNavItem href="#">about</TopLevelNavItem>
+                <TopLevelNavItem href="#">charts</TopLevelNavItem>
+                <TopLevelNavItem href="/contribute">contribute</TopLevelNavItem>
+                <TopLevelNavItem href="#">docs</TopLevelNavItem>
               </ul>
             </nav>
             {user ? (
@@ -145,7 +145,7 @@ export default function Header({ user }: Props) {
                   }}
                   className="text-red-400"
                 >
-                  <span className="text-red-400=">Sign out</span>
+                  <span className="text-red-400=">sign out</span>
                 </Button>
               </>
             ) : (
@@ -155,7 +155,7 @@ export default function Header({ user }: Props) {
                 onClick={() => setShowLogin(true)}
                 className="text-green-400"
               >
-                Sign in
+                sign in
               </Button>
             )}
             <div className="-mr-1 md:hidden">

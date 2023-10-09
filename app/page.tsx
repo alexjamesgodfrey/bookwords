@@ -1,34 +1,34 @@
 import Butterfly from "@/components/Butterfly"
+import CreateAccountToast from "@/components/Common/CreateAccountToast"
+import PrivateUtility from "@/components/Common/PrivateUtility"
 import Header from "@/components/Header"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import Link from "next/link"
-import NextJsLogo from "../components/NextJsLogo"
-import SupabaseLogo from "../components/SupabaseLogo"
 
 export const dynamic = "force-dynamic"
 
 const resources = [
   {
-    title: "Cookie-based Auth and the Next.js App Router",
+    title: "readers submit digital books",
     subtitle:
-      "This free course by Jon Meyers, shows you how to configure Supabase Auth to use cookies, and steps through some common patterns.",
+      "generous readers submit .epub files. our algorithms then analyze the file.",
     url: "https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF",
     icon: "M7 4V20M17 4V20M3 8H7M17 8H21M3 12H21M3 16H7M17 16H21M4 20H20C20.5523 20 21 19.5523 21 19V5C21 4.44772 20.5523 4 20 4H4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20Z",
   },
   {
-    title: "Supabase Next.js App Router Example",
+    title: "data is published to our website",
     subtitle:
-      "Want to see a code example containing some common patterns with Next.js and Supabase? Check out this repo!",
-    url: "https://github.com/supabase/supabase/tree/master/examples/auth/nextjs",
-    icon: "M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8",
+      "all data analyzed is made available to the public via a page on our website, which ranks in search engines.",
+    url: "https://bookwords.org",
+    icon: "M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528",
   },
   {
-    title: "Supabase Auth Helpers Docs",
+    title: "developers build apps with our api",
     subtitle:
-      "This template has configured Supabase Auth to use cookies for you, but the docs are a great place to learn more.",
-    url: "https://supabase.com/docs/guides/auth/auth-helpers/nextjs",
-    icon: "M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528",
+      "developers power their book-related apps with data from our, which is available for free.",
+    url: "https://bookwords.org",
+    icon: "M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8",
   },
 ]
 
@@ -47,31 +47,44 @@ export default async function Index() {
 
   return (
     <div className="w-full flex flex-col items-center">
+      <CreateAccountToast />
       <Header user={user} />
 
       <div className="flex">
         <div className="w-1/2">{/* text and buttons will go here*/}</div>
       </div>
 
-      <div className="animate-in flex flex-col gap-14 opacity-0 px-3 py-16 lg:py-24 text-foreground">
+      <div className="animate-in flex flex-col gap-14 opacity-0 px-3 pt-16 lg:pt-24 text-foreground">
         <div className="flex justify-center items-center">
           <div className="flex flex-col items-center mb-4 lg:mb-12">
-            <div className="flex gap-8 justify-center items-center">
-              <Link href="https://supabase.com/" target="_blank">
-                <SupabaseLogo />
+            <div className="flex gap-6 justify-center items-center">
+              <Link href="https://alexgodfrey.com" target="_blank">
+                <span className="text-2xl font-bold !leading-tight text-center">
+                  alex godfrey
+                </span>
               </Link>
               <span className="border-l rotate-45 h-6" />
-              <NextJsLogo />
+              <Link href="https://privateutility.org" target="_blank">
+                <span className="text-2xl font-bold !leading-tight text-center">
+                  <PrivateUtility />
+                </span>
+              </Link>
             </div>
             <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-            <p className="text-3xl lg:text-4xl font-bold !leading-tight mx-auto max-w-xl text-center my-12">
-              World's First <strong>word count</strong> API
+            <p className="text-3xl lg:text-4xl font-bold !leading-tight mx-auto max-w-xl text-center my-12 px-2">
+              introducing the world's first <strong>word count</strong> api
             </p>
-            <div className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
-              Get started by editing <strong>app/page.tsx</strong>
+
+            <div className="flex w-full justify-around">
+              <div className="cursor-pointer bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
+                <strong>find a book</strong>
+              </div>
+              <div className="cursor-pointer bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
+                <strong>docs</strong>
+              </div>
             </div>
           </div>
-          <div>
+          <div className="hidden md:flex">
             <Butterfly />
           </div>
         </div>
@@ -79,9 +92,7 @@ export default async function Index() {
         <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
 
         <div className="flex flex-col gap-8 text-foreground">
-          <h2 className="text-lg font-bold text-center">
-            Everything you need to get started
-          </h2>
+          <h2 className="text-lg font-bold text-center">how it works</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {resources.map(({ title, subtitle, url, icon }) => (
               <a
@@ -135,7 +146,7 @@ export default async function Index() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 text-foreground">
+        {/* <div className="flex flex-col gap-8 text-foreground">
           <div className="grid gap-2 justify-center mx-auto text-center">
             <h2 className="text-lg font-bold text-center">Examples</h2>
             <p className="text-sm">
@@ -158,17 +169,17 @@ export default async function Index() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="flex justify-center text-center text-xs">
+        <div className="flex justify-center text-center text-xs my-10">
           <p>
-            Powered by{" "}
+            powered by{" "}
             <Link
-              href="https://supabase.com/"
+              href="https://privateutility.org"
               target="_blank"
               className="font-bold"
             >
-              Supabase
+              alex godfrey's <PrivateUtility />
             </Link>
           </p>
         </div>
