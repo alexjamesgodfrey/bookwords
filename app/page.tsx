@@ -4,12 +4,11 @@ import PrivateUtility from "@/components/Common/PrivateUtility"
 import Header from "@/components/Header"
 import Docs from "@/components/Main/DocsButton"
 import FindABook from "@/components/Main/FindABook"
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-import { cookies } from "next/headers"
+// import { cookies } from "next/headers"
 import Link from "next/link"
 import { Toaster } from "react-hot-toast"
 
-export const dynamic = "force-dynamic"
+// export const dynamic = "force-dynamic"
 
 const resources = [
   {
@@ -43,10 +42,14 @@ const examples = [
 ]
 
 export default async function Index() {
-  const supabase = createServerComponentClient({ cookies })
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // const supabase = createClient(
+  //   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  // )
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser()
+  const user = null
 
   return (
     <div className="w-full flex flex-col items-center">
