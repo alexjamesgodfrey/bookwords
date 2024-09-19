@@ -2,9 +2,12 @@ import Butterfly from "@/components/Butterfly"
 import CreateAccountToast from "@/components/Common/CreateAccountToast"
 import PrivateUtility from "@/components/Common/PrivateUtility"
 import Header from "@/components/Header"
+import Docs from "@/components/Main/DocsButton"
+import FindABook from "@/components/Main/FindABook"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import Link from "next/link"
+import { Toaster } from "react-hot-toast"
 
 export const dynamic = "force-dynamic"
 
@@ -47,6 +50,7 @@ export default async function Index() {
 
   return (
     <div className="w-full flex flex-col items-center">
+      <Toaster />
       <CreateAccountToast />
       <Header user={user} />
 
@@ -58,15 +62,15 @@ export default async function Index() {
         <div className="flex justify-center items-center">
           <div className="flex flex-col items-center mb-4 lg:mb-12">
             <div className="flex gap-6 justify-center items-center">
-              <Link href="https://alexgodfrey.com" target="_blank">
+              <Link href="https://privateutility.org" target="_blank">
                 <span className="text-2xl font-bold !leading-tight text-center">
-                  alex godfrey
+                  <PrivateUtility />
                 </span>
               </Link>
               <span className="border-l rotate-45 h-6" />
               <Link href="https://privateutility.org" target="_blank">
                 <span className="text-2xl font-bold !leading-tight text-center">
-                  <PrivateUtility />
+                  bookwords
                 </span>
               </Link>
             </div>
@@ -77,10 +81,10 @@ export default async function Index() {
 
             <div className="flex w-full justify-around">
               <div className="cursor-pointer bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
-                <strong>find a book</strong>
+                <FindABook />
               </div>
               <div className="cursor-pointer bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background">
-                <strong>docs</strong>
+                <Docs />
               </div>
             </div>
           </div>
@@ -179,7 +183,7 @@ export default async function Index() {
               target="_blank"
               className="font-bold"
             >
-              alex godfrey's <PrivateUtility />
+              <PrivateUtility />
             </Link>
           </p>
         </div>
